@@ -1,6 +1,5 @@
 package com.example.library;
 
-import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -64,19 +63,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             titleView=view;
             textView = (TextView) view.findViewById(R.id.recyclerview_item_textView);
             imageView = (ImageView) view.findViewById(R.id.recyclerview_item_imageView);
-            /*
-            textView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    if (itemClickListener!= null) {
-                        itemClickListener.onClick(getAdapterPosition());
-                    }
-                }
-            });
-            */
         }
-
-
 
         public interface OnItemClickListener {
             void onItemClick(View view, TextView textView,int position);
@@ -92,8 +79,6 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int viewType) {
         View view= LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.recyclerview_item,viewGroup,false);
         final ViewHolder viewHolder=new ViewHolder(view);
-        //viewHolder.textView = (TextView) view.findViewById(R.id.textView);
-        //viewHolder.imageView = (ImageView) view.findViewById(R.id.imageView);
         return  viewHolder;
     }
 
